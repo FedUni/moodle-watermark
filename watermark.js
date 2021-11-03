@@ -23,7 +23,7 @@ THE SOFTWARE.
 !(function(attr) {
     var e = document.querySelector("[data-" + attr + "]");
     if (e) {
-      var watermark = btoa(e.dataset[d]) + "." + e.dataset[d];
+      var watermark = btoa(e.dataset[attr]) + "." + e.dataset[attr];
       var p = document.currentScript.parentElement.parentElement;
       var d = document.createElement('div');
       
