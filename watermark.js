@@ -36,7 +36,7 @@ THE SOFTWARE.
         'y="91" x="150" stroke-width="0" stroke="#000" opacity="0.05">' + watermark + '</text></svg>';
 
       p.appendChild(d);
-      p.style.background = "url('data:image/svg+xml;base64," + btoa(svg) + "')";
+      p.style.backgroundImage = "url('data:image/svg+xml;base64," + btoa(svg) + "')";
 
     }
   })('userid');
