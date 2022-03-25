@@ -26,6 +26,8 @@ THE SOFTWARE.
       var watermark = btoa(e.dataset[attr]) + "." + e.dataset[attr];
       var p = document.currentScript.parentElement.parentElement;
       var d = document.createElement('div');
+        
+      var qText = p.querySelector('.qtext');
       
       d.setAttribute('aria-hidden', true);
       d.style.fontSize = '9px';
@@ -35,7 +37,11 @@ THE SOFTWARE.
         '<text transform="rotate(-30, 125, 75)" text-anchor="middle" font-family="sans-serif" font-size="27" ' +
         'y="91" x="150" stroke-width="0" stroke="#000" opacity="0.05">' + watermark + '</text></svg>';
 
-      p.appendChild(d);
+      if(qText) {
+          qText.insertAdjacentElement('afterend', d);
+      } else {
+        p.appendChild(d);
+      }
       p.style.backgroundImage = "url('data:image/svg+xml;base64," + btoa(svg) + "')";
 
     }
